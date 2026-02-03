@@ -25,6 +25,11 @@ async function start() {
   // Hälsokontroll endpoint
   app.get("/health", async () => ({ ok: true }))
 
+  // Rot-endpoint för att verifiera att API:t körs korrekt
+  app.get("/", async () => ({
+    message: "Todo API is running",
+  }))
+
   // Registrera todo-routes
   await app.register(todoRoutes)
 
