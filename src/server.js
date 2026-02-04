@@ -13,7 +13,7 @@ async function start() {
   // Tillåter alla origins och metoder GET, POST, PATCH, DELETE
   await app.register(cors, {
     origin: true,
-    methods: ["GET", "POST", "PATCH", "DELETE"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
 
   // Hälsokontroll endpoint
