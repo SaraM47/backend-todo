@@ -10,8 +10,9 @@ const app = Fastify({ logger: true })
 // Starta servern genom att ansluta till databasen och registrera routes
 async function start() {
   // Registrera CORS-plugin
+  // Tillåter alla origins och metoder GET, POST, PATCH, DELETE
   await app.register(cors, {
-    origin: process.env.CORS_ORIGIN || true,
+    origin: true,
     methods: ["GET", "POST", "PATCH", "DELETE"],
   })
 
